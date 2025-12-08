@@ -17,9 +17,6 @@ class Main{
 		for(String s: op){
 			System.out.print(s);
 		}
-		// System.out.println("Using Lambda");
-		// Stream<String> st - Arrays.stream
-		// Arrays.stream(op).forEach(x->System.out.println(x));
 		br.close();
 	}
 }
