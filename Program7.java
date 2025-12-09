@@ -11,27 +11,27 @@ class Main{
 		for(int i=0;i<n;i++){
 			str[i] = br.readLine();
 		}
+		int index = Integer.parseInt(br.readLine());
 		
+		System.out.print(UserMainCode.playString(str,index));
 		
-		String [] op = UserMainCode.removeDuplicates(str);
-		for(String s: op){
-			System.out.print(s);
-		}
 		br.close();
 	}
 }
 
 class UserMainCode{
-	public static String[] removeDuplicates(String str[]){
-		Set<String> ts = new TreeSet<String>();
-		for(String a : str){
-			ts.add(a);
+	public static String playString(String str[],int index){
+		String res = "";
+		char c = '\0';
+		for(String s : str){
+			try{
+				c = s.charAt(index-1);
+			}catch(Exception e){
+				c = '$';
+			}
+			res = res+c;
 		}
-		String res[] = new String[ts.size()];
-		int i =0 ;
-		for(String s : ts){
-			res[i++]=s;
-		}
+		
 		return res;
 	
 	}
